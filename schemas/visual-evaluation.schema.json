@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bkg:pixel-hell:visual-evaluation:1",
+  "title": "Pixel Hell Visual Evaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_sha256", "rubric_version", "scores", "source"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "artifact_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "rubric_version": { "type": "string", "minLength": 1 },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["readability_1x", "silhouette", "palette_discipline", "lighting_logic", "cluster_cleanliness"],
+      "properties": {
+        "readability_1x": { "$ref": "#/$defs/score" },
+        "silhouette": { "$ref": "#/$defs/score" },
+        "palette_discipline": { "$ref": "#/$defs/score" },
+        "lighting_logic": { "$ref": "#/$defs/score" },
+        "cluster_cleanliness": { "$ref": "#/$defs/score" }
+      }
+    },
+    "aggregate_normalized": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["human", "model", "automated", "mixed"] },
+        "evaluator": { "type": ["string", "null"] },
+        "evaluator_version": { "type": ["string", "null"] },
+        "prompt_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "review_id": { "type": ["string", "null"] }
+      }
+    },
+    "notes": { "type": ["string", "null"] }
+  },
+  "$defs": {
+    "score": { "type": ["integer", "null"], "minimum": 0, "maximum": 5 }
+  }
+}

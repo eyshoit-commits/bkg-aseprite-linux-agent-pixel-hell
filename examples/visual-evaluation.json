@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "rubric_version": "left-hand-of-god-rubric-version-to-be-confirmed",
+  "scores": {
+    "readability_1x": null,
+    "silhouette": null,
+    "palette_discipline": null,
+    "lighting_logic": null,
+    "cluster_cleanliness": null
+  },
+  "aggregate_normalized": null,
+  "source": { "kind": "automated", "evaluator": null, "evaluator_version": null, "prompt_sha256": null, "review_id": null },
+  "notes": "Schema example only. Null scores are intentionally not invented."
+}

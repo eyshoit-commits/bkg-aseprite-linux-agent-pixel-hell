@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "ok": false,
+  "command": "doctor",
+  "exit_code": 3,
+  "run_id": null,
+  "result": null,
+  "error": { "code": "RENDERER_UNAVAILABLE", "message": "Example contract only; no command was executed.", "details": null }
+}
