@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "run_id": "run-example-not-a-real-execution",
+  "created_at": null,
+  "deterministic_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "parent_run_id": null,
+  "recipe": "tree",
+  "recipe_version": null,
+  "seed": 1000,
+  "style_sha256": null,
+  "renderer": { "name": "aseprite", "version": "set-by-doctor", "script_sha256": null },
+  "outputs": ["build/example/tree.png"],
+  "quality_report_ref": null
+}

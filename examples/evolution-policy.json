@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "policy_id": "conservative-review-first-v1",
+  "max_rounds": 4,
+  "max_candidates": 32,
+  "max_render_jobs": 64,
+  "max_evaluations": 32,
+  "max_wall_seconds": 1800,
+  "rng_algorithm": "to-be-pinned-in-M5",
+  "require_hard_gates": true,
+  "promotion": "manual_approval",
+  "allow_incomparable_auto_promotion": false
+}

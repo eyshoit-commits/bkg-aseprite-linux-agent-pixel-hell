@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bkg:pixel-hell:evolution-policy:1",
+  "title": "Pixel Hell Evolution Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "policy_id", "max_rounds", "max_candidates", "max_render_jobs", "max_evaluations", "promotion"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "max_rounds": { "type": "integer", "minimum": 1 },
+    "max_candidates": { "type": "integer", "minimum": 1 },
+    "max_render_jobs": { "type": "integer", "minimum": 1 },
+    "max_evaluations": { "type": "integer", "minimum": 0 },
+    "max_wall_seconds": { "type": ["integer", "null"], "minimum": 1 },
+    "rng_algorithm": { "type": "string", "minLength": 1 },
+    "require_hard_gates": { "const": true },
+    "promotion": { "enum": ["manual_approval", "automatic_if_comparable"] },
+    "allow_incomparable_auto_promotion": { "const": false }
+  }
+}
