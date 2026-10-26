@@ -1,0 +1,16 @@
+services:
+  pixel-hell:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bkg-aseprite-linux-agent-pixel-hell
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - ./build:/workspace/build
+      - ./out:/workspace/out
+    environment:
+      PYTHONUNBUFFERED: "1"
+    stdin_open: true
+    tty: true
+    command: ["bash", "-lc", "python3 scripts/forge.py doctor"]
